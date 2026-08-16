@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Ocean World - Gojo Edition</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gojo-void-black: #0b0c10;
+      --gojo-dark-slate: #1f2833;
+      --gojo-white: #f8f9fa;
+      --six-eyes-cyan: #00f0ff;
+      --lapse-blue: #0077ff;
+      --reversal-red: #ff0055;
+      --hollow-purple: #9d4edd;
+      --domain-accent: #c77dff;
+      --orbitron-font: 'Orbitron', sans-serif;
+    }
+
+    body { 
+      background-color: var(--gojo-void-black);
+      color: var(--gojo-white);
+      font-family: 'Exo 2', sans-serif;
+      padding-bottom: 50px;
+    }
+
+    h4, .navbar-brand, .card-title {
+      font-family: var(--orbitron-font);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Navbar Styling */
+    .navbar { 
+      background-color: var(--gojo-dark-slate) !important;
+      border-bottom: 2px solid var(--six-eyes-cyan);
+      box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+    }
+    
+    .navbar-brand {
+      color: var(--six-eyes-cyan) !important;
+      text-shadow: 0 0 10px var(--six-eyes-cyan);
+    }
+
+    .nav-link { 
+      color: var(--gojo-white) !important; 
+      font-family: var(--orbitron-font);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--six-eyes-cyan) !important;
+      text-shadow: 0 0 8px var(--six-eyes-cyan);
+    }
+
+    /* Section Titles */
+    .section-title { 
+      color: var(--six-eyes-cyan); 
+      margin: 35px 0 15px; 
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+    }
+
+    /* Glowing Custom Spinners */
+    .spinner-cyan {
+      border-color: var(--six-eyes-cyan);
+      border-right-color: transparent;
+      box-shadow: 0 0 10px var(--six-eyes-cyan);
+    }
+
+    .spinner-blue {
+      border-color: var(--lapse-blue);
+      border-right-color: transparent;
+      box-shadow: 0 0 10px var(--lapse-blue);
+    }
+
+    .spinner-purple {
+      border-color: var(--hollow-purple);
+      border-right-color: transparent;
+      box-shadow: 0 0 10px var(--hollow-purple);
+    }
+
+    /* Cards Styling */
+    .card {
+      background-color: var(--gojo-dark-slate);
+      color: var(--gojo-white);
+      border: 2px solid var(--lapse-blue);
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0, 119, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--six-eyes-cyan);
+      box-shadow: 0 0 25px var(--six-eyes-cyan);
+    }
+
+    .card-title {
+      color: var(--six-eyes-cyan);
+    }
+
+    /* Buttons Styling */
+    .btn-gojo-primary {
+      background-color: transparent;
+      color: var(--six-eyes-cyan);
+      border: 2px solid var(--six-eyes-cyan);
+      font-family: var(--orbitron-font);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gojo-primary:hover {
+      background-color: var(--six-eyes-cyan);
+      color: var(--gojo-void-black);
+      box-shadow: 0 0 15px var(--six-eyes-cyan);
+    }
+
+    .btn-gojo-blue {
+      background-color: transparent;
+      color: var(--lapse-blue);
+      border: 2px solid var(--lapse-blue);
+      font-family: var(--orbitron-font);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gojo-blue:hover {
+      background-color: var(--lapse-blue);
+      color: var(--gojo-white);
+      box-shadow: 0 0 15px var(--lapse-blue);
+    }
+
+    .btn-gojo-purple {
+      background-color: transparent;
+      color: var(--domain-accent);
+      border: 2px solid var(--hollow-purple);
+      font-family: var(--orbitron-font);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gojo-purple:hover {
+      background-color: var(--hollow-purple);
+      color: var(--gojo-white);
+      box-shadow: 0 0 15px var(--hollow-purple);
+    }
+
+    /* Pagination Styling */
+    .pagination .page-link {
+      background-color: var(--gojo-dark-slate);
+      color: var(--six-eyes-cyan);
+      border: 1px solid var(--lapse-blue);
+      font-family: var(--orbitron-font);
+      transition: all 0.2s ease;
+    }
+
+    .pagination .page-link:hover {
+      background-color: var(--six-eyes-cyan);
+      color: var(--gojo-void-black);
+      border-color: var(--six-eyes-cyan);
+      box-shadow: 0 0 10px var(--six-eyes-cyan);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPIC 3: NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="#">Ocean World</a>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Sea Animals</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Coral Reefs</a></li>
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+
+    <!-- TOPIC 1: SPINNERS -->
+    <h4 class="section-title">Exploring the Ocean...</h4>
+    <div class="spinner-border spinner-cyan mr-2" role="status"></div>
+    <div class="spinner-border spinner-blue mr-2" role="status"></div>
+    <div class="spinner-border spinner-purple" role="status"></div>
+
+    <!-- TOPIC 2: CARDS -->
+    <h4 class="section-title">Amazing Sea Animals</h4>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dolphin</h5>
+            <p class="card-text">Dolphins are intelligent sea animals that love to swim in groups.</p>
+            <a href="#" class="btn btn-gojo-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Sea Turtle</h5>
+            <p class="card-text">Sea turtles travel across oceans and return to beaches to lay eggs.</p>
+            <a href="#" class="btn btn-gojo-blue">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Octopus</h5>
+            <p class="card-text">Octopuses have eight arms and can hide by changing their colour.</p>
+            <a href="#" class="btn btn-gojo-purple">Explore</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TOPIC 4: PAGINATION -->
+    <h4 class="section-title">Browse More Ocean Animals</h4>
+
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
